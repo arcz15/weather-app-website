@@ -4,9 +4,8 @@ import './App.style.css';
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
-const getFormattedLocaltime = (utcSeconds) => {
-    let date = new Date(0);
-    date.setUTCSeconds(utcSeconds);
+const getFormattedLocaltime = (localtime) => {
+    let date = new Date(localtime);
     const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
     const formatted = {
@@ -50,8 +49,7 @@ const App = () => {
         .then(res => res.json());
         setWeatherData(response);
         setBackgroundImage(response.current.condition.text);
-        let date = new Date(0);
-        date.setUTCSeconds(response.location.localtime_epoch);
+        let date = new Date(response.location.localtime);
         date.getHours() <= 5 ? setIsNight(true) : setIsNight(false);
         setIsLoading(false);
     }
@@ -78,7 +76,7 @@ const App = () => {
                             <h1>{ weatherData.current.temp_c }°</h1>
                             <div className='location-info'>
                                 <h2>{ weatherData.location.name }</h2>
-                                <p>{ getFormattedLocaltime(weatherData.location.localtime_epoch) }</p>
+                                <p>{ getFormattedLocaltime(weatherData.location.localtime) }</p>
                             </div>
                             <div className='weather-icon'>
                                 <img src={ weatherData.current.condition.icon } alt="RAINING" width='72' height='72' />
