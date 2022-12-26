@@ -46,7 +46,7 @@ const App = () => {
 
     const fetchWeather = async (location) => {
         setIsLoading(true);
-        const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${location}`)
+        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${location}`)
         .then(res => res.json());
         setWeatherData(response);
         setBackgroundImage(response.current.condition.text);
