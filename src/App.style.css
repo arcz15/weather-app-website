@@ -159,38 +159,38 @@
 
 .loading-info {
     animation: skeleton-loading 1s linear infinite alternate;
-    width: 400px;
-    height: 25px;
-    border-radius: 8px;
+    width: 530px;
+    height: 30px;
+    border-radius: 16px;
     position: relative;
-    margin-bottom: 5%;
+    margin-bottom: 5rem;
 }
 
 .loading-info::before {
     content: '';
     animation: skeleton-loading 1s linear infinite alternate;
-    width: 400px;
-    height: 25px;
-    border-radius: 8px;
+    width: 530px;
+    height: 30px;
+    border-radius: 16px;
     position: absolute;
-    bottom: 30px;
+    bottom: 40px;
 }
 
 .loading-info::after {
     content: '';
     animation: skeleton-loading 1s linear infinite alternate;
-    width: 400px;
-    height: 25px;
-    border-radius: 8px;
+    width: 530px;
+    height: 30px;
+    border-radius: 16px;
     position: absolute;
-    top: 30px;
+    top: 40px;
 }
 
 .loading-details {
     animation: skeleton-loading 1s linear infinite alternate;
-    width: 200px;
+    width: 100px;
     height: 25px;
-    border-radius: 8px;
+    border-radius: 16px;
 }
 
 @keyframes skeleton-loading {
